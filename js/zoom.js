@@ -1,9 +1,7 @@
 $(document).ready(function(){
 
-	//show in demo alert message
 
-
-$("#announcement").delay(12000).slideToggle();
+//$("#announcement").delay(12000).slideToggle();
 	
 	//ajax menu checkbox
 	$('#is-ajax').click(function(e){
@@ -147,59 +145,6 @@ function docReady(){
 		// Put your options here
 	});
 
-	//gallery controlls container animation
-	$('ul.gallery li').hover(function(){
-		$('img',this).fadeToggle(1000);
-		$(this).find('.gallery-controls').remove();
-		$(this).append('<div class="well gallery-controls">'+
-							'<p><a href="#" class="gallery-edit btn"><i class="icon-edit"></i></a> <a href="#" class="gallery-delete btn"><i class="icon-remove"></i></a></p>'+
-						'</div>');
-		$(this).find('.gallery-controls').stop().animate({'margin-top':'-1'},400,'easeInQuint');
-	},function(){
-		$('img',this).fadeToggle(1000);
-		$(this).find('.gallery-controls').stop().animate({'margin-top':'-30'},200,'easeInQuint',function(){
-				$(this).remove();
-		});
-	});
-
-
-	//gallery image controls example
-	//gallery delete
-	$('.thumbnails').on('click','.gallery-delete',function(e){
-		e.preventDefault();
-		//get image id
-		//alert($(this).parents('.thumbnail').attr('id'));
-		$(this).parents('.thumbnail').fadeOut();
-	});
-	//gallery edit
-	$('.thumbnails').on('click','.gallery-edit',function(e){
-		e.preventDefault();
-		//get image id
-		//alert($(this).parents('.thumbnail').attr('id'));
-	});
-
-	//gallery colorbox
-	$('.thumbnail a').colorbox({rel:'thumbnail a', transition:"elastic", maxWidth:"95%", maxHeight:"95%"});
-
-	//gallery fullscreen
-	$('#toggle-fullscreen').button().click(function () {
-		var button = $(this), root = document.documentElement;
-		if (!button.hasClass('active')) {
-			$('#thumbnails').addClass('modal-fullscreen');
-			if (root.webkitRequestFullScreen) {
-				root.webkitRequestFullScreen(
-					window.Element.ALLOW_KEYBOARD_INPUT
-				);
-			} else if (root.mozRequestFullScreen) {
-				root.mozRequestFullScreen();
-			}
-		} else {
-			$('#thumbnails').removeClass('modal-fullscreen');
-			(document.webkitCancelFullScreen ||
-				document.mozCancelFullScreen ||
-				$.noop).apply(document);
-		}
-	});
 
 	//tour
 	if($('.tour').length && typeof(tour)=='undefined')
@@ -212,10 +157,10 @@ function docReady(){
 			content: "You can create tour like this. Click Next." /* content of the popover */
 		});
 		tour.addStep({
-			element: ".theme-container",
+			element: ".active",
 			placement: "left",
-			title: "Themes",
-			content: "You change your theme from here."
+			title: "Navigation",
+			content: "Navigate Zoom by clicking links in the panel."
 		});
 		tour.addStep({
 			element: "ul.main-menu a:first",
@@ -223,15 +168,15 @@ function docReady(){
 			content: "This is your dashboard from here you will find highlights."
 		});
 		tour.addStep({
-			element: "#for-is-ajax",
-			title: "Ajax",
-			content: "You can change if pages load with Ajax or not."
+			element: ".brand",
+			title: "Home",
+			content: "You can always get back to the Dashboard by clicking the Velocity Logo"
 		});
 		tour.addStep({
 			element: ".top-nav a:first",
 			placement: "bottom",
-			title: "Visit Site",
-			content: "Visit your front end from here."
+			title: "User Information",
+			content: "Don't forget to sign out."
 		});
 		
 		tour.restart();
