@@ -5,7 +5,7 @@ background-color:#fff;
 }
 
 .top-block{
- background: none repeat scroll 0 0 #FAFAFA;
+ background: none repeat scroll 0 0 #fff;
     border-radius: 0;
     box-shadow: 1px 1px 1px #E7E7E7;
     margin-bottom: 30px;
@@ -117,6 +117,7 @@ width: 80%;
 border: 1px solid #DEDEDE;
 margin-top: 10px; 
 margin-bottom: 10px ;
+background:#fff;
 }
 
 .box-header{
@@ -125,6 +126,7 @@ padding-top:5px;
 height:12px;
 min-height:12px;
 margin-bottom: 0;
+background:#fff;
 cursor:move;
 font-weight:bold;
 font-size:16px;
